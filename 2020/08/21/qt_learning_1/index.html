@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"zqy000.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="关于qt的零散学习笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="qt5学习笔记(一)">
+<meta property="og:url" content="https://zqy000.github.io/2020/08/21/qt_learning_1/index.html">
+<meta property="og:site_name" content="将进酒">
+<meta property="og:description" content="关于qt的零散学习笔记">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://zqy000.github.io/images/qt1.jpg">
+<meta property="og:image" content="https://zqy000.github.io/images/qt1.png">
+<meta property="article:published_time" content="2020-08-21T09:51:49.000Z">
+<meta property="article:modified_time" content="2021-03-27T15:29:26.805Z">
+<meta property="article:author" content="ZQY">
+<meta property="article:tag" content="qt">
+<meta property="article:tag" content="学习笔记">
+<meta property="article:tag" content="opencv">
+<meta property="article:tag" content="gui">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://zqy000.github.io/images/qt1.jpg">
+
+<link rel="canonical" href="https://zqy000.github.io/2020/08/21/qt_learning_1/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>qt5学习笔记(一) | 将进酒</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="将进酒" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">将进酒</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">君不见黄河之水天上来，奔流到海不复回。</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>日程表</a>
+
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>站点地图</a>
+
+  </li>
+        <li class="menu-item menu-item-commonweal">
+
+    <a href="/404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>公益 404</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/zqy000" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zqy000.github.io/2020/08/21/qt_learning_1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZQY">
+      <meta itemprop="description" content="ZQY的博客 |   每一个不曾起舞的日子，都是对生命的辜负。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="将进酒">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          qt5学习笔记(一)
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-08-21 17:51:49" itemprop="dateCreated datePublished" datetime="2020-08-21T17:51:49+08:00">2020-08-21</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-03-27 23:29:26" itemprop="dateModified" datetime="2021-03-27T23:29:26+08:00">2021-03-27</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/qt/" itemprop="url" rel="index"><span itemprop="name">qt</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+            <div class="post-description">关于qt的零散学习笔记</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="初见QT"><a href="#初见QT" class="headerlink" title="初见QT"></a>初见QT</h2><pre><code>        qt的主要模块
+</code></pre>
+<p>​    <img src="/images/qt1.jpg" alt="image-20210322112141675"></p>
+<p>​                                  创建的项目中的pro文件内容</p>
+<p>.pro基本上是构建工程项目时由Qt处理的第一个文件，这个文件称为Qt项目文件，一个名为“qmake”的内部Qt程序负责处理该文件</p>
+<pre><code class="c++">QT       += core gui
+
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets //版本大于4以上，使用widgets类，更好的兼容性
+
+TARGET = opencv2 //目标  生成的exe可执行文件的名称
+TEMPLATE = app  //工程所使用的模板
+DEFINES += QT_DEPRECATED_WARNINGS
+CONFIG += c++11
+
+SOURCES += \                    //源文件
+        main.cpp \
+        mainwindow.cpp
+
+HEADERS += \            //头文件
+        mainwindow.h
+
+FORMS += \                      //ui文件
+        mainwindow.ui
+# Default rules for deployment.
+qnx: target.path = /tmp/$$&#123;TARGET&#125;/bin
+else: unix:!android: target.path = /opt/$$&#123;TARGET&#125;/bin
+!isEmpty(target.path): INSTALLS += target
+        
+</code></pre>
+<h3 id="qt命名规范与快捷键"><a href="#qt命名规范与快捷键" class="headerlink" title="qt命名规范与快捷键"></a>qt命名规范与快捷键</h3><p>​    类名：首字母大写 单词与单词之间 首字母大写</p>
+<p>​    函数、变量：首字母小写，单词与单词之间 首字母大写</p>
+<p>快捷键：</p>
+<p>​    运行 ctrl+ R</p>
+<p>​    编译 ctrl + B</p>
+<p>​    查找 ctrl + F</p>
+<p>   帮助文档 第一种: F1 第二种 ：旁边的帮助按钮 第三种：assistant.exe      查看选中类及函数，esc退出</p>
+<p>​    字体缩放 ctrl + 鼠标滚轮</p>
+<p>​    自动对齐 ctrl + i</p>
+<p>​    整行移动 ctrl + shift + 上 或者下</p>
+<p>​    同名之间的 .h  .cpp 切换  F4<br>​    </p>
+<p>使用新类时，要查看该类所属的模块是否包含在工程pro文件中第一行<br>    QT       += core gui network</p>
+<p>show用顶层方式弹出，如果想在MyWidget窗口中显示，就需要依赖MyWidget 窗口， 设置 MyWidget为父亲</p>
+<p>案例一 qt_opecv</p>
+<h4 id="项目的目录结构"><a href="#项目的目录结构" class="headerlink" title="项目的目录结构"></a>项目的目录结构</h4><p><img src="/images/qt1.png" alt="qt1"></p>
+<h4 id="pro文件"><a href="#pro文件" class="headerlink" title=".pro文件"></a>.pro文件</h4><pre><code class="c++">    #-------------------------------------------------
+#
+# Project created by QtCreator 2021-03-23T21:10:27
+#
+#-------------------------------------------------
+
+QT       += core gui  //项目使用的模块
+
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets //在4版本以上的qt中使用widgets模块
+
+TARGET = qt_opencv2  //生成的exe文件名
+TEMPLATE = app  //项目使用的模板
+
+# The following define makes your compiler emit warnings if you use
+# any feature of Qt which has been marked as deprecated (the exact warnings
+# depend on your compiler). Please consult the documentation of the
+# deprecated API in order to know how to port your code away from it.
+DEFINES += QT_DEPRECATED_WARNINGS
+
+# You can also make your code fail to compile if you use deprecated APIs.
+# In order to do so, uncomment the following line.
+# You can also select to disable deprecated APIs only up to a certain version of Qt.
+#DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
+
+CONFIG += c++11
+
+SOURCES += \             //源文件
+        main.cpp \
+        mainwindow.cpp
+
+HEADERS += \              //头文件
+        mainwindow.h
+
+FORMS += \            //ui文件
+        mainwindow.ui
+
+# Default rules for deployment.
+qnx: target.path = /tmp/$$&#123;TARGET&#125;/bin
+else: unix:!android: target.path = /opt/$$&#123;TARGET&#125;/bin
+!isEmpty(target.path): INSTALLS += target
+include(&quot;c:/opencv/opencv.pri&quot;)  //包含opencv库
+
+RESOURCES += \            //项目所使用的资源文件（图片，音频等）
+    resources.qrc
+</code></pre>
+<h4 id="在-pr中包含的opencv-pri文件"><a href="#在-pr中包含的opencv-pri文件" class="headerlink" title="在.pr中包含的opencv.pri文件"></a>在.pr中包含的opencv.pri文件</h4><pre><code class="c++">
+
+INCLUDEPATH += c:\opencv\qt_build\install\include
+CONFIG(debug, debug|release): &#123;
+LIBS += c:\opencv\qt_build\install\x64\mingw\bin\libopencv_*d.dll
+&#125; else:CONFIG(release, debug|release): &#123;
+LIBS += -Lc:\opencv\qt_build\install\x64\mingw\bin\
+    -llibopencv_core451 \
+    -llibopencv_highgui451 \
+    -llibopencv_imgcodecs451 \
+    -llibopencv_imgproc451 \
+    -llibopencv_features2d451 \
+    -llibopencv_calib3d451
+&#125;
+</code></pre>
+<h4 id="mainwindow-h"><a href="#mainwindow-h" class="headerlink" title="mainwindow.h"></a>mainwindow.h</h4><p>​    这个头文件定义了mainwindow类，以及他的函数，也包含了mainwindow.cpp所需的头文件</p>
+<pre><code class="c++">#ifndef MAINWINDOW_H  //与文件尾部#endif // MAINWINDOW_H 共同起到了防止重复包含
+#define MAINWINDOW_H
+#include&lt;QDir&gt;
+#include&lt;QFile&gt;
+#include &lt;QMainWindow&gt;
+#include &lt;QFileDialog&gt;
+#include&lt;opencv2/opencv.hpp&gt;
+#include &lt;QMessageBox&gt;
+#include &lt;QCloseEvent&gt;
+#include &lt;QSettings&gt;
+namespace Ui &#123;
+class MainWindow;
+&#125;
+
+class MainWindow : public QMainWindow
+&#123;
+    Q_OBJECT  //qt文件的基类
+
+public:
+    explicit MainWindow(QWidget *parent = nullptr);
+    ~MainWindow();
+
+private slots:
+    void on_inputPushButton_pressed(); //qt中的槽函数，
+
+    void on_outputPushButton_pressed();
+
+private:
+    Ui::MainWindow *ui;
+    void loadSettings();     //加载设置
+    void saveSettings();    //保存设置
+protected:
+    void closeEvent(QCloseEvent *event); //确认关闭窗口退出程序
+&#125;;
+
+#endif // MAINWINDOW_H
+</code></pre>
+<h4 id="main-cpp"><a href="#main-cpp" class="headerlink" title="main.cpp"></a>main.cpp</h4><p>​    main函数，程序的入口</p>
+<pre><code class="c++">#include &quot;mainwindow.h&quot;
+#include &lt;QApplication&gt; //负责控制应用程序的控制流、设置等的主要类
+
+int main(int argc, char *argv[])
+&#123;
+    QApplication a(argc, argv);  //创建了QApplication类的一个实例，并将应用程序的参数（通常通过命令行或者终端传递）传递给
+    //名为a的实例
+    MainWindow w; //mainwindow类的实例w
+    w.show();//调用show（）显示该实例
+
+    return a.exec();//调用QApplication类的exec()函数，以便应用程序进入主循环，并一直保持到窗口关闭为止
+&#125;
+</code></pre>
+<h4 id="mainwindow-cpp"><a href="#mainwindow-cpp" class="headerlink" title="mainwindow.cpp"></a>mainwindow.cpp</h4><p>​        包含mainwindow类各种方法的实现，信号槽函数的实现</p>
+<pre><code>
+</code></pre>
+<pre><code class="c++">#include &quot;mainwindow.h&quot;
+#include &quot;ui_mainwindow.h&quot;  //qt的uic编译的ui文件的头文件
+#include&lt;opencv2/core.hpp&gt;
+#include &lt;opencv2/highgui/highgui.hpp&gt;
+using namespace cv;
+MainWindow::MainWindow(QWidget *parent) : //mainwindow的构造函数实现,参数列表
+    QMainWindow(parent),    //以Qmainwindow类为父容器
+    ui(new Ui::MainWindow)   //
+&#123;
+    ui-&gt;setupUi(this);
+    loadSettings();    //加载设置，具体实现在下方
+&#125;
+
+MainWindow::~MainWindow() //析构
+&#123;
+    delete ui;
+&#125;
+
+void MainWindow::on_inputPushButton_pressed()   //inputPushButton的槽函数具体实现
+&#123;
+    QString filename = QFileDialog::getOpenFileName(this,
+                                                    &quot;Open Input Image&quot;,
+                                                    QDir::currentPath(),
+                                                    &quot;Images (*.jpg *.png *.bmp *.tiff)&quot;);
+    if(QFile::exists(filename))
+    &#123;
+        ui-&gt;inputLineEdit-&gt;setText(filename);
+    &#125;
+
+&#125;
+
+void MainWindow::on_outputPushButton_pressed()
+&#123;
+    QString fileName = QFileDialog::getSaveFileName(this,
+                                                    &quot;Select Output Image&quot;,
+                                                    QDir::currentPath(),
+                                                    &quot;*.JPG ;;*.PNG;;*.BMP;;*.TIFF&quot;);
+    if(!fileName.isEmpty())&#123;
+        ui-&gt;outputLineEdit-&gt;setText(fileName);
+        using namespace  cv;
+        Mat inpImg, outImg;
+        inpImg = imread(ui-&gt;inputLineEdit-&gt;text().toStdString());
+        if(ui-&gt;medianBlurRadioButton-&gt;isChecked())
+            cv::medianBlur(inpImg,outImg,5);
+        else if (ui-&gt;gaussianBlurRadioButton-&gt;isChecked())
+            cv::GaussianBlur(inpImg,outImg,Size(5,5),1.25);
+        imwrite(fileName.toStdString(),outImg);
+        if(ui-&gt;displayImageCheckBox-&gt;isChecked())
+            imshow(&quot;Output image&quot;,outImg);
+    &#125;
+&#125;
+void MainWindow::loadSettings()
+&#123;
+    QSettings settings(&quot;Packt&quot;,
+                      &quot;qt_opencv2&quot;,
+                      this);
+    ui-&gt;inputLineEdit-&gt;setText(settings.value(&quot;inputLineEdit&quot;,&quot;&quot;).toString());
+    ui-&gt;outputLineEdit-&gt;setText(settings.value(&quot;outputLineEdit&quot;,&quot;&quot;).toString());
+    ui-&gt;medianBlurRadioButton-&gt;setChecked(settings.value(&quot;medianBlurRadioButton&quot;,true).toBool());
+    ui-&gt;gaussianBlurRadioButton-&gt;setChecked(settings.value(&quot;gaussianBlurRadioButtin&quot;,false).toBool());
+    ui-&gt;displayImageCheckBox-&gt;setChecked(settings.value(&quot;displayImageCheckBox&quot;,false).toBool());
+
+&#125;
+void MainWindow::saveSettings()
+&#123;
+    QSettings settings(&quot;Packt&quot;,
+                      &quot;qt_opencv2&quot;,
+                       this);
+    settings.setValue(&quot;inputLIneEdit&quot;,ui-&gt;inputLineEdit-&gt;text());
+    settings.setValue(&quot;outputLineEdit&quot;,ui-&gt;outputLineEdit-&gt;text());
+    settings.setValue(&quot;medianBlurRadioButton&quot;,ui-&gt;medianBlurRadioButton-&gt;isChecked());
+    settings.setValue(&quot;gaussianBlurRadioButton&quot;,ui-&gt;gaussianBlurRadioButton-&gt;isChecked());
+    settings.setValue(&quot;displayImageCheckBox&quot;,ui-&gt;displayImageCheckBox-&gt;isChecked());
+&#125;
+void MainWindow::closeEvent(QCloseEvent *event)
+&#123;
+    int result = QMessageBox::warning(this,
+                                      &quot;Exit&quot;,
+                                      &quot;Are you sure you want to close this program?&quot;,
+                                      QMessageBox::Yes,
+                                      QMessageBox::No);
+    if(result == QMessageBox::Yes)
+    &#123;
+        saveSettings();
+        event-&gt;accept();
+    &#125;
+    else &#123;
+        &#123;
+            event-&gt;ignore();
+        &#125;
+    &#125;
+&#125;
+</code></pre>
+
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div>不差钱的大哥哥大姐姐可以点一点扫一扫</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.png" alt="ZQY 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.png" alt="ZQY 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/images/wechat_channel.jpg">
+            <span class="icon">
+              <i class="fab fa-weixin"></i>
+            </span>
+
+            <span class="label">WeChat</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/qt/" rel="tag"># qt</a>
+              <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag"># 学习笔记</a>
+              <a href="/tags/opencv/" rel="tag"># opencv</a>
+              <a href="/tags/gui/" rel="tag"># gui</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/09/21/Bilibili%E8%A7%86%E9%A2%91%E4%B8%8B%E8%BD%BD%E5%99%A8/" rel="prev" title="Bilibili视频下载器">
+      <i class="fa fa-chevron-left"></i> Bilibili视频下载器
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/09/21/%E5%9F%BA%E4%BA%8Eopencv%E7%9A%84%E8%A7%86%E9%A2%91%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F/" rel="next" title="基于opencv的视频监控系统">
+      基于opencv的视频监控系统 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC81MzAxMy8yOTQ4OQ=="></div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9D%E8%A7%81QT"><span class="nav-number">1.</span> <span class="nav-text">初见QT</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#qt%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83%E4%B8%8E%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="nav-number">1.1.</span> <span class="nav-text">qt命名规范与快捷键</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%A1%B9%E7%9B%AE%E7%9A%84%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84"><span class="nav-number">1.1.1.</span> <span class="nav-text">项目的目录结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#pro%E6%96%87%E4%BB%B6"><span class="nav-number">1.1.2.</span> <span class="nav-text">.pro文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9C%A8-pr%E4%B8%AD%E5%8C%85%E5%90%AB%E7%9A%84opencv-pri%E6%96%87%E4%BB%B6"><span class="nav-number">1.1.3.</span> <span class="nav-text">在.pr中包含的opencv.pri文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#mainwindow-h"><span class="nav-number">1.1.4.</span> <span class="nav-text">mainwindow.h</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#main-cpp"><span class="nav-number">1.1.5.</span> <span class="nav-text">main.cpp</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#mainwindow-cpp"><span class="nav-number">1.1.6.</span> <span class="nav-text">mainwindow.cpp</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="ZQY"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">ZQY</p>
+  <div class="site-description" itemprop="description">ZQY的博客 |   每一个不曾起舞的日子，都是对生命的辜负。</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/zqy000" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;zqy000" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:2365626817@qq.com" title="E-Mail → mailto:2365626817@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ZQY</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script size="200" alpha="0.6" zIndex="-2" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+  <script defer src="/lib/three/three.min.js"></script>
+    <script defer src="/lib/three/canvas_lines.min.js"></script>
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+NexT.utils.loadComments(document.querySelector('#lv-container'), () => {
+  window.livereOptions = {
+    refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+});
+</script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","width":145,"height":315,"hOffset":0,"vOffset":-20},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script></body>
+</html>
