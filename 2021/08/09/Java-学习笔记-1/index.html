@@ -29,19 +29,19 @@
 <meta property="og:site_name" content="将进酒">
 <meta property="og:description" content="Java学习的初级阶段:Java基础语法，类的创建以及使用，基础I&#x2F;O,循环控制、运算符、数组、方法、方法重载。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://zqy000.github.io/images/java1-1.jpg">
+<meta property="og:image" content="http://c.biancheng.net/uploads/allimg/190903/5-1ZZ3131223943.png">
 <meta property="og:image" content="https://www.runoob.com/wp-content/uploads/2013/12/662E827A-FA32-4464-B0BD-40087F429E98.jpg">
 <meta property="og:image" content="https://www.runoob.com/wp-content/uploads/2013/12/ZSSDMld.png">
 <meta property="og:image" content="https://www.runoob.com/wp-content/uploads/2013/12/20210105-java-object-1.png">
 <meta property="og:image" content="https://www.runoob.com/wp-content/uploads/2013/12/java-string-1-2020-12-01.png">
 <meta property="og:image" content="https://www.runoob.com/wp-content/uploads/2013/12/java-string-20201208.png">
 <meta property="article:published_time" content="2021-08-09T00:41:51.000Z">
-<meta property="article:modified_time" content="2021-08-10T09:31:38.590Z">
+<meta property="article:modified_time" content="2021-08-11T06:01:26.428Z">
 <meta property="article:author" content="ZQY">
-<meta property="article:tag" content="学习笔记">
 <meta property="article:tag" content="Java">
+<meta property="article:tag" content="学习笔记">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://zqy000.github.io/images/java1-1.jpg">
+<meta name="twitter:image" content="http://c.biancheng.net/uploads/allimg/190903/5-1ZZ3131223943.png">
 
 <link rel="canonical" href="https://zqy000.github.io/2021/08/09/Java-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-1/">
 
@@ -253,7 +253,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-08-10 17:31:38" itemprop="dateModified" datetime="2021-08-10T17:31:38+08:00">2021-08-10</time>
+                <time title="修改时间：2021-08-11 14:01:26" itemprop="dateModified" datetime="2021-08-11T14:01:26+08:00">2021-08-11</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -285,7 +285,7 @@
 
       
         <h1 id="Java-学习笔记-1"><a href="#Java-学习笔记-1" class="headerlink" title="Java 学习笔记(1)"></a>Java 学习笔记(1)</h1><h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>​        Java最大的优点在于设计之初就秉承了“一次编写，到处运行（Write once,Run Everywhere).”Java语言编写的程序可以在编译后不经任何改动，就能在其他平台上运行，这得益于它的JVM（Java virtual Machine)的机制屏蔽了“翻译”的细节，由JVM负责翻译沟通。</p>
-<p><img src="/images/java1-1.jpg" alt="JVM"></p>
+<p><img src="http://c.biancheng.net/uploads/allimg/190903/5-1ZZ3131223943.png" alt="JVM"></p>
 <h3 id="JVM"><a href="#JVM" class="headerlink" title="JVM"></a>JVM</h3><p>​        JVM:Java编译器javac将源代码编译成.class文件，然后通过命令java将.class送往Java虚拟机(JVM)最终变成可执行程序。JVM可以看作是在机器和编译程序之间加入了一层抽象的虚拟机器。这台虚拟的机器在任何平台上提供给编译器一个共同的接口，编译程序只需要面向虚拟机，生成虚拟机能够理解的代码，然后由解释器来将虚拟机代码转换为特定系统的机器码执行。在Java中，将这种供虚拟机理解的代码叫做字节码(Byte Code)，他不面向任何特定的处理器，只面向虚拟机。每一种平台的解释器是不同的，但是实现的虚拟机确实相同的。</p>
 <h3 id="JRE"><a href="#JRE" class="headerlink" title="JRE"></a>JRE</h3><p>​        JRE(Java Runtime Environment):JRE是运行JAVA程序所必须的环境的集合，包含JVM标准实现以及JAVA核心类库。一个Java程序想要运行在Java虚拟机之中，源代码的语句需要由Java编译器编译成字节码。字节码本质上是一种标准化的可移植的二进制格式。改格式以Java类文件.class的形式存在。一个Java程序可以由多个不同的.class文件构成，通常将多个.class文件打包成一个发布文件.jar。其扩展名来自于”java archive”(java归档文件)的简写。</p>
 <h3 id="JDK"><a href="#JDK" class="headerlink" title="JDK"></a>JDK</h3><p>​        JDK(Java Development Kit):Java开发工具包，包括了JRE(Java Runtime Environment)、编译（javac）、解释（java）、打包（jre）等工具还包括开发工具以及开发工具的应用程序接口。</p>
@@ -2652,7 +2652,7 @@ public class RegexMatches
 <td align="left"><strong>public static String quoteReplacement(String s)</strong> 返回指定字符串的字面替换字符串。这个方法返回一个字符串，就像传递给Matcher类的appendReplacement 方法一个字面字符串一样工作。</td>
 </tr>
 </tbody></table>
-<pre><code class="java">//start 和 end 方法
+<h4 id="start-和-end-方法"><a href="#start-和-end-方法" class="headerlink" title="start 和 end 方法"></a>start 和 end 方法</h4><pre><code class="java">//start 和 end 方法
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
  
@@ -2688,6 +2688,185 @@ end(): 11
 Match number 4
 start(): 19
 end(): 22*/
+</code></pre>
+<h4 id="matches-和-lookingAt-方法"><a href="#matches-和-lookingAt-方法" class="headerlink" title="matches 和 lookingAt 方法"></a>matches 和 lookingAt 方法</h4><p>matches 和 lookingAt 方法都用来尝试匹配一个输入序列模式。 matches 要求整个序列都匹配，而lookingAt 不要求。lookingAt 方法虽然不需要整句都匹配，但是需要从第一个字符开始匹配。</p>
+<ol>
+<li><pre><code class="java">import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+ 
+public class RegexMatches
+&#123;
+    private static final String REGEX = &quot;foo&quot;;
+    private static final String INPUT = &quot;fooooooooooooooooo&quot;;
+    private static final String INPUT2 = &quot;ooooofoooooooooooo&quot;;
+    private static Pattern pattern;
+    private static Matcher matcher;
+    private static Matcher matcher2;
+ 
+    public static void main( String[] args )&#123;
+       pattern = Pattern.compile(REGEX);
+       matcher = pattern.matcher(INPUT);
+       matcher2 = pattern.matcher(INPUT2);
+ 
+       System.out.println(&quot;Current REGEX is: &quot;+REGEX);
+       System.out.println(&quot;Current INPUT is: &quot;+INPUT);
+       System.out.println(&quot;Current INPUT2 is: &quot;+INPUT2);
+ 
+ 
+       System.out.println(&quot;lookingAt(): &quot;+matcher.lookingAt());
+       System.out.println(&quot;matches(): &quot;+matcher.matches());
+       System.out.println(&quot;lookingAt(): &quot;+matcher2.lookingAt());
+   &#125;
+&#125;
+/**输出
+REGEX is: foo
+Current INPUT is: fooooooooooooooooo
+Current INPUT2 is: ooooofoooooooooooo
+lookingAt(): true
+matches(): false
+lookingAt(): false*/
+</code></pre>
+</li>
+</ol>
+<h4 id="replaceFirst-和-replaceAll-方法"><a href="#replaceFirst-和-replaceAll-方法" class="headerlink" title="replaceFirst 和 replaceAll 方法"></a>replaceFirst 和 replaceAll 方法</h4><p>replaceFirst 替换首次匹配，replaceAll 替换所有匹配。</p>
+<pre><code class="java">import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+ 
+public class RegexMatches
+&#123;
+    private static String REGEX = &quot;dog&quot;;
+    private static String INPUT = &quot;The dog says meow. &quot; +
+                                    &quot;All dogs say meow.&quot;;
+    private static String REPLACE = &quot;cat&quot;;
+ 
+    public static void main(String[] args) &#123;
+       Pattern p = Pattern.compile(REGEX);
+       // get a matcher object
+       Matcher m = p.matcher(INPUT); 
+       INPUT = m.replaceAll(REPLACE);
+       System.out.println(INPUT);
+   
+    &#125;
+    /*输出
+    The cat says meow. All cats say meow.
+    */
+</code></pre>
+<h4 id="appendReplacement-和-appendTail-方法"><a href="#appendReplacement-和-appendTail-方法" class="headerlink" title="appendReplacement 和 appendTail 方法"></a>appendReplacement 和 appendTail 方法</h4><pre><code class="java">private static String REGEX = &quot;a*b&quot;;
+private static String INPUT = &quot;aabfooaabfooabfoobkkk&quot;;
+private static String REPLACE = &quot;-&quot;;
+Pattern p = Pattern.compile(REGEX);
+Matcher m = p.matcher(INPUT);
+      StringBuffer sb = new StringBuffer();
+      while(m.find())&#123;
+         m.appendReplacement(sb,REPLACE);
+      &#125;
+      m.appendTail(sb);
+      System.out.println(sb.toString());
+/*输出
+-foo-foo-foo-kkk
+*/
+</code></pre>
+<h2 id="Java-方法"><a href="#Java-方法" class="headerlink" title="Java 方法"></a>Java 方法</h2><p> <strong>System.out.println()</strong></p>
+<ul>
+<li>println() 是一个方法。</li>
+<li>System 是系统类。</li>
+<li>out 是标准输出对象。</li>
+</ul>
+<p>这句话调用系统类 System 中的标准输出对象 out 中的方法 println()</p>
+<p>1.方法的名字的第一个单词应以小写字母作为开头，后面的单词则用大写字母开头写，不使用连接符。</p>
+<p>2.下划线可能出现在 JUnit 测试方法名称中用以分隔名称的逻辑组件。</p>
+<h3 id="方法的重载"><a href="#方法的重载" class="headerlink" title="方法的重载"></a>方法的重载</h3><p>一个类的两个方法拥有相同的名字，但是有不同的参数列表。Java编译器根据方法签名判断哪个方法应该被调用。</p>
+<pre><code class="java">public static double max(double num1, double num2) &#123;
+  if (num1 &gt; num2)
+    return num1;
+  else
+    return num2;
+&#125;
+</code></pre>
+<p>重载的方法必须拥有不同的参数列表。你不能仅仅依据修饰符或者返回类型的不同来重载方法。</p>
+<h3 id="命令行参数的使用"><a href="#命令行参数的使用" class="headerlink" title="命令行参数的使用"></a>命令行参数的使用</h3><p>有时候你希望运行一个程序时候再传递给它消息。这要靠传递命令行参数给main()函数实现。</p>
+<p>命令行参数是在执行程序时候紧跟在程序名字后面的信息。</p>
+<pre><code class="java">public class CommandLine &#123;
+   public static void main(String args[])&#123; 
+      for(int i=0; i&lt;args.length; i++)&#123;
+         System.out.println(&quot;args[&quot; + i + &quot;]: &quot; + args[i]);
+      &#125;
+   &#125;
+&#125;
+</code></pre>
+<p>运行这个程序：</p>
+<pre><code class="java">
+$ javac CommandLine.java 
+$ java CommandLine this is a command line 200 -100
+args[0]: this
+args[1]: is
+args[2]: a
+args[3]: command
+args[4]: line
+args[5]: 200
+args[6]: -100
+</code></pre>
+<h3 id="构造方法-1"><a href="#构造方法-1" class="headerlink" title="构造方法"></a>构造方法</h3><p>当一个对象被创建时候，构造方法用来初始化该对象。构造方法和它所在类的名字相同，但构造方法没有返回值。</p>
+<p>通常会使用构造方法给一个类的实例变量赋初值，或者执行其它必要的步骤来创建一个完整的对象。</p>
+<p>所有的类都有构造方法，Java 自动提供了一个默认构造方法，默认构造方法的访问修饰符和类的访问修饰符相同(类为 public，构造函数也为 public；类改为 protected，构造函数也改为 protected)。一旦你定义了自己的构造方法，默认构造方法就会失效。</p>
+<pre><code class="java">
+// 一个无参构造
+class MyClass &#123;
+  int x;
+ 
+  // 以下是构造函数
+  MyClass() &#123;
+    x = 10;
+  &#125;
+&#125;
+    MyClass t1 = new MyClass( 10 );
+    MyClass t2 = new MyClass( 20 );
+    System.out.println(t1.x + &quot; &quot; + t2.x);
+// 有参构造
+class MyClass &#123;
+  int x;
+ 
+  // 以下是构造函数
+  MyClass(int i ) &#123;
+    x = i;
+  &#125;
+&#125;
+调用有参构造来初始化对象
+    MyClass t1 = new MyClass( 10 );
+    MyClass t2 = new MyClass( 20 );
+</code></pre>
+<h3 id="可变长参数"><a href="#可变长参数" class="headerlink" title="可变长参数"></a>可变长参数</h3><p>一个方法中只能指定一个可变参数，它必须是方法的最后一个参数。任何普通的参数必须在它之前声明。</p>
+<p>在调用方法的时候，如果能够和固定参数的方法匹配，也能够与可变长参数的方法匹配，则选择固定参数的方法。</p>
+<p><strong>避免带有可变长参数的方法重载</strong></p>
+<pre><code class="java">public class VarargsDemo &#123;
+    public static void main(String args[]) &#123;
+        // 调用可变参数的方法
+        printMax(34, 3, 3, 2, 56.5);
+        printMax(new double[]&#123;1, 2, 3&#125;);
+    &#125;
+ 
+    public static void printMax( double... numbers) &#123;//可变参数
+        if (numbers.length == 0) &#123;
+            System.out.println(&quot;No argument passed&quot;);
+            return;
+        &#125;
+ 
+        double result = numbers[0];
+ 
+        for (int i = 1; i &lt;  numbers.length; i++)&#123;
+            if (numbers[i] &gt;  result) &#123;
+                result = numbers[i];
+            &#125;
+        &#125;
+        System.out.println(&quot;The max value is &quot; + result);
+    &#125;
+&#125;
+</code></pre>
+<h3 id="finalize-方法（类似析构函数）"><a href="#finalize-方法（类似析构函数）" class="headerlink" title="finalize() 方法（类似析构函数）"></a>finalize() 方法（类似析构函数）</h3><p>Java 允许定义这样的方法，它在对象被垃圾收集器析构(回收)之前调用，这个方法叫做 finalize( )，它用来清除回收对象。</p>
+<pre><code class="java">protected void finalize()
+&#123;
+   // 在这里终结代码
+&#125;
 </code></pre>
 
     </div>
@@ -2747,8 +2926,8 @@ end(): 22*/
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag"># 学习笔记</a>
               <a href="/tags/Java/" rel="tag"># Java</a>
+              <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag"># 学习笔记</a>
           </div>
 
         
@@ -2824,7 +3003,7 @@ end(): 22*/
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Java-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-1"><span class="nav-number">1.</span> <span class="nav-text">Java 学习笔记(1)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%95%E8%A8%80"><span class="nav-number">1.1.</span> <span class="nav-text">引言</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#JVM"><span class="nav-number">1.1.1.</span> <span class="nav-text">JVM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JRE"><span class="nav-number">1.1.2.</span> <span class="nav-text">JRE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JDK"><span class="nav-number">1.1.3.</span> <span class="nav-text">JDK</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JAVA%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5"><span class="nav-number">1.2.</span> <span class="nav-text">JAVA基础概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95"><span class="nav-number">1.2.1.</span> <span class="nav-text">基础语法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Java%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">Java修饰符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Java-%E6%A0%87%E8%AF%86%E7%AC%A6"><span class="nav-number">1.2.1.2.</span> <span class="nav-text">Java 标识符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Java-%E5%8F%98%E9%87%8F"><span class="nav-number">1.2.1.3.</span> <span class="nav-text">Java 变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Java-%E6%95%B0%E7%BB%84"><span class="nav-number">1.2.1.4.</span> <span class="nav-text">Java 数组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Java-%E6%9E%9A%E4%B8%BE"><span class="nav-number">1.2.1.5.</span> <span class="nav-text">Java 枚举</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Java%E6%B3%A8%E9%87%8A"><span class="nav-number">1.2.1.6.</span> <span class="nav-text">Java注释</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BB%A7%E6%89%BF"><span class="nav-number">1.2.1.7.</span> <span class="nav-text">继承</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8E%A5%E5%8F%A3"><span class="nav-number">1.2.1.8.</span> <span class="nav-text">接口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Java-%E6%BA%90%E7%A8%8B%E5%BA%8F%E4%B8%8E%E7%BC%96%E8%AF%91%E5%9E%8B%E8%BF%90%E8%A1%8C%E5%8C%BA%E5%88%AB"><span class="nav-number">1.2.1.9.</span> <span class="nav-text">Java 源程序与编译型运行区别</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java-%E5%AF%B9%E8%B1%A1%E5%92%8C%E7%B1%BB"><span class="nav-number">1.3.</span> <span class="nav-text">Java 对象和类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95"><span class="nav-number">1.3.1.</span> <span class="nav-text">构造方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1"><span class="nav-number">1.3.2.</span> <span class="nav-text">创建对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BF%E9%97%AE%E5%AE%9E%E4%BE%8B%E5%8F%98%E9%87%8F%E5%92%8C%E6%96%B9%E6%B3%95"><span class="nav-number">1.3.3.</span> <span class="nav-text">访问实例变量和方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%BA%90%E6%96%87%E4%BB%B6%E5%A3%B0%E6%98%8E%E8%A7%84%E5%88%99"><span class="nav-number">1.3.4.</span> <span class="nav-text">源文件声明规则</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.4.</span> <span class="nav-text">Java基本数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%86%85%E7%BD%AE%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.4.0.1.</span> <span class="nav-text">内置数据类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.4.0.2.</span> <span class="nav-text">引用类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Java-%E5%B8%B8%E9%87%8F"><span class="nav-number">1.4.0.3.</span> <span class="nav-text">Java 常量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%87%AA%E5%8A%A8%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="nav-number">1.4.0.4.</span> <span class="nav-text">自动类型转换</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.5.</span> <span class="nav-text">Java变量类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Java%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F"><span class="nav-number">1.5.0.1.</span> <span class="nav-text">Java局部变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9E%E4%BE%8B%E5%8F%98%E9%87%8F"><span class="nav-number">1.5.0.2.</span> <span class="nav-text">实例变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%B1%BB%E5%8F%98%E9%87%8F%EF%BC%88%E9%9D%99%E6%80%81%E5%8F%98%E9%87%8F%EF%BC%89"><span class="nav-number">1.5.0.3.</span> <span class="nav-text">类变量（静态变量）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java-%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="nav-number">1.6.</span> <span class="nav-text">Java 修饰符</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="nav-number">1.6.1.</span> <span class="nav-text">访问控制修饰符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6%E5%92%8C%E7%BB%A7%E6%89%BF"><span class="nav-number">1.6.2.</span> <span class="nav-text">访问控制和继承</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%9E%E8%AE%BF%E9%97%AE%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="nav-number">1.6.3.</span> <span class="nav-text">非访问修饰符</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#static-%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="nav-number">1.6.3.1.</span> <span class="nav-text">static 修饰符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#final-%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="nav-number">1.6.3.2.</span> <span class="nav-text">final 修饰符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#abstract-%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="nav-number">1.6.3.3.</span> <span class="nav-text">abstract 修饰符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#synchronized-%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="nav-number">1.6.3.4.</span> <span class="nav-text">synchronized 修饰符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#transient-%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="nav-number">1.6.3.5.</span> <span class="nav-text">transient 修饰符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#volatile-%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="nav-number">1.6.3.6.</span> <span class="nav-text">volatile 修饰符</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java-%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">1.7.</span> <span class="nav-text">Java 运算符</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%97%E6%9C%AF%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">1.7.1.</span> <span class="nav-text">算术运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B3%E7%B3%BB%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">1.7.2.</span> <span class="nav-text">关系运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%8D%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">1.7.3.</span> <span class="nav-text">位运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">1.7.4.</span> <span class="nav-text">逻辑运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9F%AD%E8%B7%AF%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">1.7.5.</span> <span class="nav-text">短路逻辑运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B5%8B%E5%80%BC%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">1.7.6.</span> <span class="nav-text">赋值运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9D%A1%E4%BB%B6%E8%BF%90%E7%AE%97%E7%AC%A6%EF%BC%88-%EF%BC%89"><span class="nav-number">1.7.7.</span> <span class="nav-text">条件运算符（?:）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#instanceof-%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">1.7.8.</span> <span class="nav-text">instanceof 运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java%E8%BF%90%E7%AE%97%E7%AC%A6%E4%BC%98%E5%85%88%E7%BA%A7"><span class="nav-number">1.7.9.</span> <span class="nav-text">Java运算符优先级</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java-%E5%BE%AA%E7%8E%AF%E7%BB%93%E6%9E%84-for-while-%E5%8F%8A-do%E2%80%A6while"><span class="nav-number">1.8.</span> <span class="nav-text">Java 循环结构 - for, while 及 do…while</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#for%E5%BE%AA%E7%8E%AF"><span class="nav-number">1.8.1.</span> <span class="nav-text">for循环</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java-%E5%A2%9E%E5%BC%BA-for-%E5%BE%AA%E7%8E%AF"><span class="nav-number">1.8.2.</span> <span class="nav-text">Java 增强 for 循环</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#break-%E5%85%B3%E9%94%AE%E5%AD%97"><span class="nav-number">1.8.3.</span> <span class="nav-text">break 关键字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#continue-%E5%85%B3%E9%94%AE%E5%AD%97"><span class="nav-number">1.8.4.</span> <span class="nav-text">continue 关键字</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java-%E6%9D%A1%E4%BB%B6%E8%AF%AD%E5%8F%A5-if%E2%80%A6else"><span class="nav-number">1.9.</span> <span class="nav-text">Java 条件语句- if…else</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java-switch-case-%E8%AF%AD%E5%8F%A5"><span class="nav-number">1.10.</span> <span class="nav-text">Java switch case 语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java-Number-amp-Math-%E7%B1%BB"><span class="nav-number">1.11.</span> <span class="nav-text">Java Number &amp; Math 类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Java-Math-%E7%B1%BB"><span class="nav-number">1.11.1.</span> <span class="nav-text">Java Math 类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Number-amp-Math-%E7%B1%BB%E6%96%B9%E6%B3%95"><span class="nav-number">1.11.2.</span> <span class="nav-text">Number &amp; Math 类方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java-Character-%E7%B1%BB"><span class="nav-number">1.12.</span> <span class="nav-text">Java Character 类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BD%AC%E4%B9%89%E5%BA%8F%E5%88%97"><span class="nav-number">1.12.1.</span> <span class="nav-text">转义序列</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Character-%E6%96%B9%E6%B3%95"><span class="nav-number">1.12.2.</span> <span class="nav-text">Character 方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java-String-%E7%B1%BB"><span class="nav-number">1.13.</span> <span class="nav-text">Java String 类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#String%E3%80%81StringBuffer-%E5%92%8C-StringBuilder-%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">1.13.1.</span> <span class="nav-text">String、StringBuffer 和 StringBuilder 的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%95%BF%E5%BA%A6"><span class="nav-number">1.13.2.</span> <span class="nav-text">字符串长度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9E%E6%8E%A5%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-number">1.13.3.</span> <span class="nav-text">连接字符串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-number">1.13.4.</span> <span class="nav-text">创建格式化字符串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#String-%E6%96%B9%E6%B3%95"><span class="nav-number">1.13.5.</span> <span class="nav-text">String 方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java-StringBuffer-%E5%92%8C-StringBuilder-%E7%B1%BB"><span class="nav-number">1.14.</span> <span class="nav-text">Java StringBuffer 和 StringBuilder 类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#StringBuffer-%E6%96%B9%E6%B3%95"><span class="nav-number">1.14.1.</span> <span class="nav-text">StringBuffer 方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java%E6%95%B0%E7%BB%84"><span class="nav-number">1.15.</span> <span class="nav-text">Java数组</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A3%B0%E6%98%8E%E6%95%B0%E7%BB%84%E5%8F%98%E9%87%8F"><span class="nav-number">1.15.1.</span> <span class="nav-text">声明数组变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E7%BB%B4%E6%95%B0%E7%BB%84%E7%9A%84%E5%8A%A8%E6%80%81%E5%88%9D%E5%A7%8B%E5%8C%96%EF%BC%88%E4%BB%A5%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E4%B8%BA%E4%BE%8B%EF%BC%89"><span class="nav-number">1.15.2.</span> <span class="nav-text">多维数组的动态初始化（以二维数组为例）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Arrays-%E7%B1%BB"><span class="nav-number">1.15.3.</span> <span class="nav-text">Arrays 类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java-%E6%97%A5%E6%9C%9F%E6%97%B6%E9%97%B4"><span class="nav-number">1.15.4.</span> <span class="nav-text">Java 日期时间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-SimpleDateFormat-%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%97%A5%E6%9C%9F"><span class="nav-number">1.15.5.</span> <span class="nav-text">使用 SimpleDateFormat 格式化日期</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%97%A5%E6%9C%9F%E5%92%8C%E6%97%B6%E9%97%B4%E7%9A%84%E6%A0%BC%E5%BC%8F%E5%8C%96%E7%BC%96%E7%A0%81"><span class="nav-number">1.15.5.1.</span> <span class="nav-text">日期和时间的格式化编码</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8printf%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%97%A5%E6%9C%9F"><span class="nav-number">1.15.6.</span> <span class="nav-text">使用printf格式化日期</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%8B%E9%87%8F%E6%97%B6%E9%97%B4"><span class="nav-number">1.15.7.</span> <span class="nav-text">测量时间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Calendar%E7%B1%BB"><span class="nav-number">1.15.8.</span> <span class="nav-text">Calendar类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Calendar%E7%B1%BB%E5%AF%B9%E8%B1%A1%E5%AD%97%E6%AE%B5%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.15.8.1.</span> <span class="nav-text">Calendar类对象字段类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Add%E8%AE%BE%E7%BD%AE"><span class="nav-number">1.15.8.2.</span> <span class="nav-text">Add设置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Calendar%E7%B1%BB%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF%E7%9A%84%E8%8E%B7%E5%BE%97"><span class="nav-number">1.15.8.3.</span> <span class="nav-text">Calendar类对象信息的获得</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GregorianCalendar%E7%B1%BB"><span class="nav-number">1.15.9.</span> <span class="nav-text">GregorianCalendar类</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="nav-number">1.16.</span> <span class="nav-text">Java正则表达式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8D%95%E8%8E%B7%E7%BB%84"><span class="nav-number">1.16.1.</span> <span class="nav-text">捕获组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%AF%AD%E6%B3%95"><span class="nav-number">1.16.2.</span> <span class="nav-text">正则表达式语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Matcher-%E7%B1%BB%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">1.16.3.</span> <span class="nav-text">Matcher 类的方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%B4%A2%E5%BC%95%E6%96%B9%E6%B3%95"><span class="nav-number">1.16.3.1.</span> <span class="nav-text">索引方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9F%A5%E6%89%BE%E6%96%B9%E6%B3%95"><span class="nav-number">1.16.3.2.</span> <span class="nav-text">查找方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9B%BF%E6%8D%A2%E6%96%B9%E6%B3%95"><span class="nav-number">1.16.3.3.</span> <span class="nav-text">替换方法</span></a></li></ol></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Java-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-1"><span class="nav-number">1.</span> <span class="nav-text">Java 学习笔记(1)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%95%E8%A8%80"><span class="nav-number">1.1.</span> <span class="nav-text">引言</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#JVM"><span class="nav-number">1.1.1.</span> <span class="nav-text">JVM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JRE"><span class="nav-number">1.1.2.</span> <span class="nav-text">JRE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JDK"><span class="nav-number">1.1.3.</span> <span class="nav-text">JDK</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JAVA%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5"><span class="nav-number">1.2.</span> <span class="nav-text">JAVA基础概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95"><span class="nav-number">1.2.1.</span> <span class="nav-text">基础语法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Java%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">Java修饰符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Java-%E6%A0%87%E8%AF%86%E7%AC%A6"><span class="nav-number">1.2.1.2.</span> <span class="nav-text">Java 标识符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Java-%E5%8F%98%E9%87%8F"><span class="nav-number">1.2.1.3.</span> <span class="nav-text">Java 变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Java-%E6%95%B0%E7%BB%84"><span class="nav-number">1.2.1.4.</span> <span class="nav-text">Java 数组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Java-%E6%9E%9A%E4%B8%BE"><span class="nav-number">1.2.1.5.</span> <span class="nav-text">Java 枚举</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Java%E6%B3%A8%E9%87%8A"><span class="nav-number">1.2.1.6.</span> <span class="nav-text">Java注释</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BB%A7%E6%89%BF"><span class="nav-number">1.2.1.7.</span> <span class="nav-text">继承</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8E%A5%E5%8F%A3"><span class="nav-number">1.2.1.8.</span> <span class="nav-text">接口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Java-%E6%BA%90%E7%A8%8B%E5%BA%8F%E4%B8%8E%E7%BC%96%E8%AF%91%E5%9E%8B%E8%BF%90%E8%A1%8C%E5%8C%BA%E5%88%AB"><span class="nav-number">1.2.1.9.</span> <span class="nav-text">Java 源程序与编译型运行区别</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java-%E5%AF%B9%E8%B1%A1%E5%92%8C%E7%B1%BB"><span class="nav-number">1.3.</span> <span class="nav-text">Java 对象和类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95"><span class="nav-number">1.3.1.</span> <span class="nav-text">构造方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1"><span class="nav-number">1.3.2.</span> <span class="nav-text">创建对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BF%E9%97%AE%E5%AE%9E%E4%BE%8B%E5%8F%98%E9%87%8F%E5%92%8C%E6%96%B9%E6%B3%95"><span class="nav-number">1.3.3.</span> <span class="nav-text">访问实例变量和方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%BA%90%E6%96%87%E4%BB%B6%E5%A3%B0%E6%98%8E%E8%A7%84%E5%88%99"><span class="nav-number">1.3.4.</span> <span class="nav-text">源文件声明规则</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.4.</span> <span class="nav-text">Java基本数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%86%85%E7%BD%AE%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.4.0.1.</span> <span class="nav-text">内置数据类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.4.0.2.</span> <span class="nav-text">引用类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Java-%E5%B8%B8%E9%87%8F"><span class="nav-number">1.4.0.3.</span> <span class="nav-text">Java 常量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%87%AA%E5%8A%A8%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="nav-number">1.4.0.4.</span> <span class="nav-text">自动类型转换</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.5.</span> <span class="nav-text">Java变量类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Java%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F"><span class="nav-number">1.5.0.1.</span> <span class="nav-text">Java局部变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9E%E4%BE%8B%E5%8F%98%E9%87%8F"><span class="nav-number">1.5.0.2.</span> <span class="nav-text">实例变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%B1%BB%E5%8F%98%E9%87%8F%EF%BC%88%E9%9D%99%E6%80%81%E5%8F%98%E9%87%8F%EF%BC%89"><span class="nav-number">1.5.0.3.</span> <span class="nav-text">类变量（静态变量）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java-%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="nav-number">1.6.</span> <span class="nav-text">Java 修饰符</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="nav-number">1.6.1.</span> <span class="nav-text">访问控制修饰符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6%E5%92%8C%E7%BB%A7%E6%89%BF"><span class="nav-number">1.6.2.</span> <span class="nav-text">访问控制和继承</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%9E%E8%AE%BF%E9%97%AE%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="nav-number">1.6.3.</span> <span class="nav-text">非访问修饰符</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#static-%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="nav-number">1.6.3.1.</span> <span class="nav-text">static 修饰符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#final-%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="nav-number">1.6.3.2.</span> <span class="nav-text">final 修饰符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#abstract-%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="nav-number">1.6.3.3.</span> <span class="nav-text">abstract 修饰符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#synchronized-%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="nav-number">1.6.3.4.</span> <span class="nav-text">synchronized 修饰符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#transient-%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="nav-number">1.6.3.5.</span> <span class="nav-text">transient 修饰符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#volatile-%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="nav-number">1.6.3.6.</span> <span class="nav-text">volatile 修饰符</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java-%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">1.7.</span> <span class="nav-text">Java 运算符</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%97%E6%9C%AF%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">1.7.1.</span> <span class="nav-text">算术运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B3%E7%B3%BB%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">1.7.2.</span> <span class="nav-text">关系运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%8D%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">1.7.3.</span> <span class="nav-text">位运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">1.7.4.</span> <span class="nav-text">逻辑运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9F%AD%E8%B7%AF%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">1.7.5.</span> <span class="nav-text">短路逻辑运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B5%8B%E5%80%BC%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">1.7.6.</span> <span class="nav-text">赋值运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9D%A1%E4%BB%B6%E8%BF%90%E7%AE%97%E7%AC%A6%EF%BC%88-%EF%BC%89"><span class="nav-number">1.7.7.</span> <span class="nav-text">条件运算符（?:）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#instanceof-%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">1.7.8.</span> <span class="nav-text">instanceof 运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java%E8%BF%90%E7%AE%97%E7%AC%A6%E4%BC%98%E5%85%88%E7%BA%A7"><span class="nav-number">1.7.9.</span> <span class="nav-text">Java运算符优先级</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java-%E5%BE%AA%E7%8E%AF%E7%BB%93%E6%9E%84-for-while-%E5%8F%8A-do%E2%80%A6while"><span class="nav-number">1.8.</span> <span class="nav-text">Java 循环结构 - for, while 及 do…while</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#for%E5%BE%AA%E7%8E%AF"><span class="nav-number">1.8.1.</span> <span class="nav-text">for循环</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java-%E5%A2%9E%E5%BC%BA-for-%E5%BE%AA%E7%8E%AF"><span class="nav-number">1.8.2.</span> <span class="nav-text">Java 增强 for 循环</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#break-%E5%85%B3%E9%94%AE%E5%AD%97"><span class="nav-number">1.8.3.</span> <span class="nav-text">break 关键字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#continue-%E5%85%B3%E9%94%AE%E5%AD%97"><span class="nav-number">1.8.4.</span> <span class="nav-text">continue 关键字</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java-%E6%9D%A1%E4%BB%B6%E8%AF%AD%E5%8F%A5-if%E2%80%A6else"><span class="nav-number">1.9.</span> <span class="nav-text">Java 条件语句- if…else</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java-switch-case-%E8%AF%AD%E5%8F%A5"><span class="nav-number">1.10.</span> <span class="nav-text">Java switch case 语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java-Number-amp-Math-%E7%B1%BB"><span class="nav-number">1.11.</span> <span class="nav-text">Java Number &amp; Math 类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Java-Math-%E7%B1%BB"><span class="nav-number">1.11.1.</span> <span class="nav-text">Java Math 类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Number-amp-Math-%E7%B1%BB%E6%96%B9%E6%B3%95"><span class="nav-number">1.11.2.</span> <span class="nav-text">Number &amp; Math 类方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java-Character-%E7%B1%BB"><span class="nav-number">1.12.</span> <span class="nav-text">Java Character 类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BD%AC%E4%B9%89%E5%BA%8F%E5%88%97"><span class="nav-number">1.12.1.</span> <span class="nav-text">转义序列</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Character-%E6%96%B9%E6%B3%95"><span class="nav-number">1.12.2.</span> <span class="nav-text">Character 方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java-String-%E7%B1%BB"><span class="nav-number">1.13.</span> <span class="nav-text">Java String 类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#String%E3%80%81StringBuffer-%E5%92%8C-StringBuilder-%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">1.13.1.</span> <span class="nav-text">String、StringBuffer 和 StringBuilder 的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%95%BF%E5%BA%A6"><span class="nav-number">1.13.2.</span> <span class="nav-text">字符串长度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9E%E6%8E%A5%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-number">1.13.3.</span> <span class="nav-text">连接字符串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-number">1.13.4.</span> <span class="nav-text">创建格式化字符串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#String-%E6%96%B9%E6%B3%95"><span class="nav-number">1.13.5.</span> <span class="nav-text">String 方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java-StringBuffer-%E5%92%8C-StringBuilder-%E7%B1%BB"><span class="nav-number">1.14.</span> <span class="nav-text">Java StringBuffer 和 StringBuilder 类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#StringBuffer-%E6%96%B9%E6%B3%95"><span class="nav-number">1.14.1.</span> <span class="nav-text">StringBuffer 方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java%E6%95%B0%E7%BB%84"><span class="nav-number">1.15.</span> <span class="nav-text">Java数组</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A3%B0%E6%98%8E%E6%95%B0%E7%BB%84%E5%8F%98%E9%87%8F"><span class="nav-number">1.15.1.</span> <span class="nav-text">声明数组变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E7%BB%B4%E6%95%B0%E7%BB%84%E7%9A%84%E5%8A%A8%E6%80%81%E5%88%9D%E5%A7%8B%E5%8C%96%EF%BC%88%E4%BB%A5%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E4%B8%BA%E4%BE%8B%EF%BC%89"><span class="nav-number">1.15.2.</span> <span class="nav-text">多维数组的动态初始化（以二维数组为例）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Arrays-%E7%B1%BB"><span class="nav-number">1.15.3.</span> <span class="nav-text">Arrays 类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java-%E6%97%A5%E6%9C%9F%E6%97%B6%E9%97%B4"><span class="nav-number">1.15.4.</span> <span class="nav-text">Java 日期时间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-SimpleDateFormat-%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%97%A5%E6%9C%9F"><span class="nav-number">1.15.5.</span> <span class="nav-text">使用 SimpleDateFormat 格式化日期</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%97%A5%E6%9C%9F%E5%92%8C%E6%97%B6%E9%97%B4%E7%9A%84%E6%A0%BC%E5%BC%8F%E5%8C%96%E7%BC%96%E7%A0%81"><span class="nav-number">1.15.5.1.</span> <span class="nav-text">日期和时间的格式化编码</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8printf%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%97%A5%E6%9C%9F"><span class="nav-number">1.15.6.</span> <span class="nav-text">使用printf格式化日期</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%8B%E9%87%8F%E6%97%B6%E9%97%B4"><span class="nav-number">1.15.7.</span> <span class="nav-text">测量时间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Calendar%E7%B1%BB"><span class="nav-number">1.15.8.</span> <span class="nav-text">Calendar类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Calendar%E7%B1%BB%E5%AF%B9%E8%B1%A1%E5%AD%97%E6%AE%B5%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.15.8.1.</span> <span class="nav-text">Calendar类对象字段类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Add%E8%AE%BE%E7%BD%AE"><span class="nav-number">1.15.8.2.</span> <span class="nav-text">Add设置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Calendar%E7%B1%BB%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF%E7%9A%84%E8%8E%B7%E5%BE%97"><span class="nav-number">1.15.8.3.</span> <span class="nav-text">Calendar类对象信息的获得</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GregorianCalendar%E7%B1%BB"><span class="nav-number">1.15.9.</span> <span class="nav-text">GregorianCalendar类</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="nav-number">1.16.</span> <span class="nav-text">Java正则表达式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8D%95%E8%8E%B7%E7%BB%84"><span class="nav-number">1.16.1.</span> <span class="nav-text">捕获组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%AF%AD%E6%B3%95"><span class="nav-number">1.16.2.</span> <span class="nav-text">正则表达式语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Matcher-%E7%B1%BB%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">1.16.3.</span> <span class="nav-text">Matcher 类的方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%B4%A2%E5%BC%95%E6%96%B9%E6%B3%95"><span class="nav-number">1.16.3.1.</span> <span class="nav-text">索引方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9F%A5%E6%89%BE%E6%96%B9%E6%B3%95"><span class="nav-number">1.16.3.2.</span> <span class="nav-text">查找方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9B%BF%E6%8D%A2%E6%96%B9%E6%B3%95"><span class="nav-number">1.16.3.3.</span> <span class="nav-text">替换方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#start-%E5%92%8C-end-%E6%96%B9%E6%B3%95"><span class="nav-number">1.16.3.4.</span> <span class="nav-text">start 和 end 方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#matches-%E5%92%8C-lookingAt-%E6%96%B9%E6%B3%95"><span class="nav-number">1.16.3.5.</span> <span class="nav-text">matches 和 lookingAt 方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#replaceFirst-%E5%92%8C-replaceAll-%E6%96%B9%E6%B3%95"><span class="nav-number">1.16.3.6.</span> <span class="nav-text">replaceFirst 和 replaceAll 方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#appendReplacement-%E5%92%8C-appendTail-%E6%96%B9%E6%B3%95"><span class="nav-number">1.16.3.7.</span> <span class="nav-text">appendReplacement 和 appendTail 方法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java-%E6%96%B9%E6%B3%95"><span class="nav-number">1.17.</span> <span class="nav-text">Java 方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E7%9A%84%E9%87%8D%E8%BD%BD"><span class="nav-number">1.17.1.</span> <span class="nav-text">方法的重载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%8F%82%E6%95%B0%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="nav-number">1.17.2.</span> <span class="nav-text">命令行参数的使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95-1"><span class="nav-number">1.17.3.</span> <span class="nav-text">构造方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%AF%E5%8F%98%E9%95%BF%E5%8F%82%E6%95%B0"><span class="nav-number">1.17.4.</span> <span class="nav-text">可变长参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#finalize-%E6%96%B9%E6%B3%95%EF%BC%88%E7%B1%BB%E4%BC%BC%E6%9E%90%E6%9E%84%E5%87%BD%E6%95%B0%EF%BC%89"><span class="nav-number">1.17.5.</span> <span class="nav-text">finalize() 方法（类似析构函数）</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
